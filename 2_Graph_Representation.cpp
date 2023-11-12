@@ -21,8 +21,10 @@ int main(){
 
     int n , m;
     cin>>n>>m;
-    int adj_mat[n+1][n+1]; // adjacency matrix
-    vector<int> adj_list[n+1];// adjacency list
+    int adj_mat[n+1][n+1]; // adjacency matrix without any weight;
+    vector<int> adj_list[n+1];// adjacency list without any weight or having unit weights
+
+    vector<pair<int,int>>graph[n+1]; // adjacency list to store the weights of graphs 
 
     for(int i=0;i<m;i++){
         int u , v;
@@ -30,8 +32,21 @@ int main(){
         // adj_mat way of storing 
         adj_mat[u][v]=1;
         adj_mat[v][u]=1;
+        // way to store if weights are given of undirected graph
+        /*
+         adj_mat[u][v]= wt;
+        adj_mat[v][u]=wt;
+        */
+        
         // adj_list way of storing 
         adj_list[u].push_back(v);
+        // no need to store below one if there is a directed graph
         adj_list[v].push_back(u);
+
+        // way to store in adj_list if weights of graphs are given 
+        /*
+        graph[u].push_back({v,wt});
+        graphs[v].push_back({u,wt});
+        */
     }
 }
