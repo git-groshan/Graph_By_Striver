@@ -56,3 +56,8 @@ printMatrix(oranges);
 cout<<time<<endl;
 return 0;
 }
+/*
+T.C = O(N x M)
+S.C = O(N x M)
+
+*/

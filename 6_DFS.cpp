@@ -35,6 +35,32 @@ void DFS(int node , vector<int>adj[] , int vis[] , vector<int>&ls){
         }
     }
 }
+
+
+void dfs_by_luv(int vertex , vector<int>g[] , vector<bool>&vis){
+    // section 1
+    /*
+    Take action on vertex after entering the vertex
+    */
+//    if(vis[vertex]) return;
+   vis[vertex]=true;
+    for(auto &child :g[vertex]){
+        // section 2
+        /* 
+        take action on child before entering the child node
+        */
+
+       if(!vis[child])
+            dfs_by_luv(child , g , vis);
+        //section 3
+        /*
+        Take action on child after exiting the child node
+        */
+    }
+    // section 4
+    /*take action on vertext before exiting the vertex*/
+
+}
 vector<int> dfsOfGraph(int V , vector<int>adj[]){
     int vis[V]={0};
     int start = 0;
