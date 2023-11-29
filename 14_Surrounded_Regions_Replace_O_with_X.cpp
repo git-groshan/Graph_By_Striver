@@ -57,21 +57,26 @@ printMatrix(mat);
 // top row
 for(int j=0;j<m;j++){
     if(mat[0][j]=='O' and !vis[0][j]) convert_O_in_X(0,j,n,m,mat,vis); 
+    if(mat[n-1][j]=='O' and !vis[n-1][j]) convert_O_in_X(n-1,j,n,m,mat,vis); 
 }
+/*
 // bottom row
 for(int j=0;j<m;j++){
     if(mat[n-1][j]=='O' and !vis[n-1][j]) convert_O_in_X(n-1,j,n,m,mat,vis); 
 }
+*/
 // first col 
 for(int i=0;i<n;i++){
     if(mat[i][0]=='O' and !vis[i][0]) convert_O_in_X(i,0,n , m , mat , vis);
+    if(mat[i][m-1]=='O' and !vis[i][m-1]) convert_O_in_X(i,m-1,n , m , mat , vis);
 }
-
+/*
 // last col
 
 for(int i=0;i<n;i++){
     if(mat[i][m-1]=='O' and !vis[i][m-1]) convert_O_in_X(i,m-1,n , m , mat , vis);
 }
+*/
 
 // whichever O is not vis will be marked as X
 for(int i=0;i<n;i++){
@@ -82,7 +87,9 @@ for(int i=0;i<n;i++){
 cout<<"Printing updated matrix "<<endl;
 printMatrix(mat);
 
-
+/*
+T.C = O(N x M x 4) ~= O(N x M)
+*/
 
 
 
