@@ -88,7 +88,7 @@ cout<<"Printing updated matrix "<<endl;
 printMatrix(mat);
 
 /*
-T.C = O(N x M x 4) ~= O(N x M)
+T.C = O(N x M x 4) ~= O(N x M)N
 */
 
 
